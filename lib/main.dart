@@ -1,15 +1,27 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(
+      DevicePreview(
+        enabled: !kReleaseMode, // 릴리즈 모드가 아닐 때만 활성화
+        builder: (context) => MyApp(), // 앱을 감싸줍니다.
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LandingPage());
+    return MaterialApp(
+      // useInheritedMediaQuery: true, // MediaQuery를 상속받아 사용
+      locale: DevicePreview.locale(context), // Locale 설정
+      builder: DevicePreview.appBuilder, // 앱 빌더 설정
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      home: const LandingPage(),
+    );
   }
 }
 
