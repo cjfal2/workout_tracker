@@ -9,60 +9,57 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, // 디버그 띠 없애기
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+    return MaterialApp(home: LandingPage());
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
+class LandingPage extends StatelessWidget {
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.only(top: 50),
+        child: Center(
+          child: Column(
+            children: [
+              Flexible(
+                flex: 10,
+                child: Container(
+                  color: Color.fromRGBO(255, 136, 136, 1),
+                  child: Text(
+                    "러닝앱",
+                    style: TextStyle(fontSize: 32),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 100,
+                child: Image.asset("assets/runner.png"),
+              ),
+              Flexible(
+                flex: 10,
+                child: Text(
+                  "환영합니다",
+                  style: TextStyle(fontSize: 32),
+                ),
+              ),
+              Flexible(
+                flex: 10,
+                child: ElevatedButton(
+                  onPressed: () => print("1"),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  child: Text(
+                    "시작하기",
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
