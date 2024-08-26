@@ -7,9 +7,9 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+include:
+  package:flutter_lints/flutter.yaml
 
-linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
   # included above or to enable additional rules. A list of all available lints
@@ -20,9 +20,16 @@ linter:
   # or a specific dart file by using the `// ignore: name_of_lint` and
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
+linter:
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    avoid_print: false
+    # 'avoid_print': 로그나 디버깅을 위해 'print' 문 사용을 피하라는 규칙입니다. 대신 적절한 로깅 도구 사용을 권장합니다.
+    prefer_const_constructors: false
+    # 'prefer_const_constructors': 가능할 때마다 'const' 생성자를 사용하도록 권장하는 규칙입니다. 이는 성능을 향상시키고 메모리 사용을 줄일 수 있습니다.
+    prefer_const_literals_to_create_immutables: false
+    # 'prefer_const_literals_to_create_immutables': 불변 컬렉션(리스트, 맵, 세트 등)을 생성할 때 'const'를 사용하도록 권장하는 규칙입니다. 이는 성능을 향상시킬 수 있습니다.
+    prefer_const_constructors_in_immutables: false
+    # 'prefer_const_constructors_in_immutables': 불변 클래스의 생성자는 가능하면 'const'로 선언되어야 한다고 권장하는 규칙입니다. 이렇게 하면 객체를 더 효율적으로 만들 수 있습니다.
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
