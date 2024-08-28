@@ -36,7 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
-  
+  flex_color_scheme: ^7.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,7 +77,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: NanumBrushScript
+      fonts:
+        - asset: assets/fonts/NanumBrushScript-Regular.ttf
+
+    - family: Jua
+      fonts:
+        - asset: assets/fonts/Jua-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
