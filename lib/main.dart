@@ -87,8 +87,8 @@ class MyApp extends StatelessWidget {
 
       // home: const LandingPage(),
       title: "workout tracker",
-      // home: WorkoutListPage(),
-      home: WorkoutGuidePage(),
+      home: WorkoutListPage(),
+      // home: WorkoutGuidePage(),
     );
   }
 }
